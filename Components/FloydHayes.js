@@ -172,26 +172,7 @@ const FloydHayes = (props) => {
           </View>
         </ScrollView>
 
-        <View style={{flexDirection: 'row', position: 'absolute', bottom: 0}}>
-          <Feather
-            name="align-justify"
-            style={ShareStyle.LeftBottom}
-            size={25}
-            color="#66729e"
-          />
-          <Entypo
-            name="circle-with-plus"
-            style={ShareStyle.CenterBottom}
-            size={25}
-            color="#66729e"
-          />
-          <Feather
-            name="user"
-            style={ShareStyle.RightBottom}
-            size={25}
-            color="#66729e"
-          />
-        </View>
+
       </SafeAreaView>
     </ScrollView>
   );

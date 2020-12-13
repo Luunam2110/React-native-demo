@@ -7,11 +7,13 @@ import {
   Touchable,
   TouchableOpacity
 } from "react-native";
+import Entypo from "react-native-vector-icons/Entypo";
 
 
 
 const MyTabBar = ({state,navigation}) => {
 
+  const RenderIcon =(name)=>(name === 'Profile'? 'news': name === 'Setting'?'clipboard':'grid');
   const [CurrentName, setCurrentName]= useState('Profile');
   const {routes}= state;
   const RenderColor=(name)=>(name === CurrentName ? 'red':'black');
@@ -29,6 +31,7 @@ const MyTabBar = ({state,navigation}) => {
           <Tab tab={route}
                onPress={()=>handlePress(route.name,index)}
                key ={route.key}
+               icon={RenderIcon(route.name)}
                color={RenderColor(route.name)} />)}
 
       </View>
@@ -36,12 +39,16 @@ const MyTabBar = ({state,navigation}) => {
   );
 };
 
-const Tab =({ tab ,onPress,color})=>{
+const Tab =({ icon ,onPress,color})=>{
   return (
-  <TouchableOpacity onPress={onPress}>
-    <Text style={{color}} >{tab.name}</Text>
-  </TouchableOpacity>
-);}
+    <TouchableOpacity onPress={onPress}>
+      <Entypo
+        size={25}
+        color={color}
+        name={icon}
+      />
+    </TouchableOpacity>
+  );}
 const {width}= Dimensions.get('screen');
 const styles = StyleSheet.create ({
   Wrapper:{
