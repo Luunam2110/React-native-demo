@@ -36,7 +36,7 @@ const App: () => React$Node = (props) => {
       <NavigationContainer>
         {
           !props.login?
-            <LognComponent/>
+            <LoginComponent/>
             :
             <Stack.Navigator>
               <Stack.Screen
