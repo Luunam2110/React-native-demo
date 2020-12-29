@@ -18,7 +18,7 @@ const Eiffel: () => React$Node = () => {
             </View>
             <Image
                 style ={styles.image}
-                source = {require('../Img/anh5.jpg')}/>
+                source = {require('../Resource/Img/anh5.jpg')}/>
                 <View>
                     <View>
                         <Text style={styles.text}>Eiffel tower</Text>

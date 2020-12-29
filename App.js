@@ -7,32 +7,52 @@
  */
 
 import React,{useState} from 'react';
+import {
+  View,
+  StatusBar
+} from 'react-native'
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginComponent from "./Components/Login/LoginComponent";
-import FloydHayes from "./Components/FloydHayes";
-import Eiffel from "./Components/Eiffel";
+import Tasks from "./Components/Tasks/Tasks";
+import Profile from "./Components/Profile/Profile";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Utilities from "./Components/Utilities";
-import Notifications from "./Components/Notifications";
-import MyTabBar from "./Components/MyTabBar";
+import Utilities from "./Components/Utilities/Utilities";
+import MyBottomBar from "./Components/MyBottomBar";
 import { connect, Provider } from "react-redux";
-import store from "./redux/store";
+import Notifications from "./Components/Notifications/Notifications";
+import New from "./Components/News/New";
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Schedule from "./Components/Schedule/Schedule";
+import Study from "./Components/Study/Study";
+import MyTopBar from "./Components/MyTopBar";
 
+
+const TabTop= createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
 const Tab= createBottomTabNavigator();
 
+const User =()=>(
+  <TabTop.Navigator tabBar={(props) => <MyTopBar {...props}/>}>
+    <TabTop.Screen name='Schedule' component={Schedule}/>
+    <TabTop.Screen name='Profile' component={Profile}/>
+    <TabTop.Screen name='Study' component={Study}/>
+  </TabTop.Navigator>
+);
+
 const Home =()=>(
-       <Tab.Navigator tabBar={(props) => <MyTabBar {...props}/>}>
-         <Tab.Screen name="Profile" component={FloydHayes}/>
-         <Tab.Screen name="Setting" component={Eiffel}/>
-         <Tab.Screen name="Utilities" component={Utilities}/>
+       <Tab.Navigator tabBar={(props) => <MyBottomBar {...props}/>}>
+         <Tab.Screen name='News' component={New}/>
+         <Tab.Screen name="User" component={User}/>
+         <Tab.Screen name="Tasks" component={Tasks}/>
+         <Tab.Screen name='Utilities' component={Utilities}/>
        </Tab.Navigator>
 );
 
-const App: () => React$Node = (props) => {
-  const [isSignedIn, setIsSignedIn]= useState(false);
+const App = (props) => {
   return (
+    <View style={{flex:1}}>
+      <StatusBar backgroundColor='#84cbe1' barStyle ='light-content'/>
       <NavigationContainer>
         {
           !props.login?
@@ -50,6 +70,9 @@ const App: () => React$Node = (props) => {
             </Stack.Navigator>
         }
       </NavigationContainer>
+    </View>
+
+
   );
 };
 const mapStateToProps = state => {

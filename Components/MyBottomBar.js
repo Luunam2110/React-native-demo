@@ -11,13 +11,12 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 
 
-const MyTabBar = ({state,navigation}) => {
+const MyBottomBar = ({state,navigation}) => {
 
   const RenderIcon =(name)=>(name === 'News'? 'newspaper': (name === 'Tasks'?'tasks':(name==='User'?'user':'box-open')));
   const [CurrentName, setCurrentName]= useState('News');
   const {routes}= state;
   const RenderColor=(name)=>(name === CurrentName ? 'red':'black');
-  console.log(state.index);
   const handlePress=(activeTab,index)=>{
     if (state.index!==index) {
       setCurrentName(activeTab);
@@ -94,4 +93,4 @@ const styles = StyleSheet.create ({
 });
 
 
-export default MyTabBar;
+export default MyBottomBar;

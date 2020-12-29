@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity
 } from "react-native";
-import  Notifications from "./Notifications"
+import  Notifications from "./Notifications/Notifications"
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { connect } from "react-redux";
 
@@ -14,11 +14,16 @@ const Utilities = (props) => {
   return (
 <View style={{flex:1}}>
   <TouchableOpacity
-    onPress={() => props.navigation.navigate('Notifications')}
-  >
-    <Ionicons style ={{position:'absolute', right:20,top:20}} name="notifications" size={30} color="#900" />
+    style ={{position:'absolute', right:20,top:20,zIndex:2}}
+    onPress={() => props.navigation.navigate('Notifications')}>
+    <Ionicons  name="notifications" size={30} color="#900" />
   </TouchableOpacity>
-  <TouchableOpacity style={{flex:1,flexDirection:'column',justifyContent:'center', alignItems: 'center'
+  <TouchableOpacity
+    style={{
+      flex:1,
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems: 'center'
   }}
   onPress={()=>{props.logout()}}>
     <Text style={styles.Logout}>LOG OUT</Text>

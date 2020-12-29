@@ -1,17 +1,25 @@
 import React from 'react';
 import {
-  Text,
-  View
-} from 'react-native';
+  StyleSheet,
+  Text, TouchableOpacity,
+  View,
+} from "react-native";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { scale } from "react-native-size-matters";
 
 
-const Notifications: () => React$Node = () => {
+const Notifications= (props) => {
   return (
     <View>
-      <Text>đây là trang thông báo</Text>
+
+      <TouchableOpacity
+        style={[{backgroundColor:'red',position:'absolute',zIndex:100}]}
+        onPress={props.navigation.navigate('Home')}>
+        <MaterialIcons name='schedule' color='#000' size={19} />
+      </TouchableOpacity>
+
     </View>
   );
-};
-
+}
 
 export default Notifications;

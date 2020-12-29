@@ -93,7 +93,7 @@ const LoginComponent =(props) => {
 
                 <View style={style.ContainerImage}>
                         <Animated.Image
-                            source={require('../../Img/LogoFitHou.png')}
+                            source={require('../../Resource/Img/LogoFitHou.png')}
                             style={[style.LogoFitHou,{height: updateHeight,width: updateWidth}]}
                         />
                     </View>

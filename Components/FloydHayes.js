@@ -24,133 +24,77 @@ import { connect } from "react-redux";
 const ListImage = [
   {
     id: 1,
-    UriImage: require('../Img/anh1.jpg'),
+    UriImage: require('../Resource/Img/anh1.jpg'),
   },
   {
     id: 2,
-    UriImage: require('../Img/anh2.jpg'),
+    UriImage: require('../Resource/Img/anh2.jpg'),
   },
   {
     id: 3,
-    UriImage: require('../Img/anh3.jpg'),
+    UriImage: require('../Resource/Img/anh3.jpg'),
   },
   {
     id: 4,
-    UriImage: require('../Img/anh4.jpg'),
+    UriImage: require('../Resource/Img/anh4.jpg'),
   },
   {
     id: 8,
-    UriImage: require('../Img/anh3.jpg'),
+    UriImage: require('../Resource/Img/anh3.jpg'),
   },
   {
     id: 7,
-    UriImage: require('../Img/anh4.jpg'),
+    UriImage: require('../Resource/Img/anh4.jpg'),
   },
   {
     id: 6,
-    UriImage: require('../Img/anh1.jpg'),
+    UriImage: require('../Resource/Img/anh1.jpg'),
   },
   {
     id: 5,
-    UriImage: require('../Img/anh2.jpg'),
+    UriImage: require('../Resource/Img/anh2.jpg'),
   },
 ];
 
 const ListImage1 = [
   {
     id: 3,
-    UriImage: require('../Img/anh3.jpg'),
+    UriImage: require('../Resource/Img/anh3.jpg'),
   },
   {
     id: 4,
-    UriImage: require('../Img/anh4.jpg'),
+    UriImage: require('../Resource/Img/anh4.jpg'),
   },
   {
     id: 1,
-    UriImage: require('../Img/anh1.jpg'),
+    UriImage: require('../Resource/Img/anh1.jpg'),
   },
   {
     id: 2,
-    UriImage: require('../Img/anh2.jpg'),
+    UriImage: require('../Resource/Img/anh2.jpg'),
   },
   {
     id: 8,
-    UriImage: require('../Img/anh3.jpg'),
+    UriImage: require('../Resource/Img/anh3.jpg'),
   },
   {
     id: 7,
-    UriImage: require('../Img/anh4.jpg'),
+    UriImage: require('../Resource/Img/anh4.jpg'),
   },
   {
     id: 6,
-    UriImage: require('../Img/anh1.jpg'),
+    UriImage: require('../Resource/Img/anh1.jpg'),
   },
   {
     id: 5,
-    UriImage: require('../Img/anh2.jpg'),
+    UriImage: require('../Resource/Img/anh2.jpg'),
   },
 ];
 
-const FloydHayes = (props) => {
+const FloydHayes = () => {
   return (
-    <ScrollView ContanerStyle={{flex: 1}}>
       <SafeAreaView style={{flex: 1}}>
         <StatusBar barStyle="dark-content" />
-        <View>
-          <MaterialIcons
-            style={ShareStyle.BackItem}
-            size={25}
-            color="#66729e"
-            name="arrow-back"
-          />
-          <Fontisto
-            style={ShareStyle.NavIconGrid}
-            size={25}
-            name="nav-icon-grid-a"
-            color="#66729e"
-          />
-        </View>
-        <View style={styles.Row1}>
-          <View style={{flex: 1, alignItems: 'center'}}>
-            <Image
-              source={require('../Img/anh1.jpg')}
-              style={styles.CircleImage}
-            />
-          </View>
-          <View style={{flex: 2}}>
-            <Text style={styles.Name}>{props.name}</Text>
-            <Text style={[styles.SmallText, {fontSize: 13}]}>Photographer</Text>
-            <View style={{flexDirection: 'row'}}>
-              <View style={{flex: 2}}>
-                <Text style={styles.Follow}>Follow</Text>
-              </View>
-              <View style={{flex: 4}}>
-                <Ionicons
-                  style={styles.IconSend}
-                  name="send-sharp"
-                  size={16}
-                  color="#fff"
-                />
-              </View>
-            </View>
-          </View>
-        </View>
-        <View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{flex: 1, alignItems: 'center', margin: 20}}>
-              <Text style={styles.Value}>210</Text>
-              <Text style={styles.SmallText}>Photos</Text>
-            </View>
-            <View style={{flex: 1, alignItems: 'center', margin: 20}}>
-              <Text style={styles.Value}>210</Text>
-              <Text style={styles.SmallText}>Photos</Text>
-            </View>
-            <View style={{flex: 1, alignItems: 'center', margin: 20}}>
-              <Text style={styles.Value}>210</Text>
-              <Text style={styles.SmallText}>Photos</Text>
-            </View>
-          </View>
-        </View>
         <ScrollView>
           <View
             style={{
@@ -171,10 +115,7 @@ const FloydHayes = (props) => {
             </View>
           </View>
         </ScrollView>
-
-
       </SafeAreaView>
-    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
