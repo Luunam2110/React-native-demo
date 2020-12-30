@@ -10,8 +10,8 @@ import {
   Image,
   StatusBar,
 } from 'react-native';
-import ExpCircle from "../../Resource/SVG/Circle";
-import FloydHayes from "../FloydHayes";
+import connect from "react-redux/lib/connect/connect";
+import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 
 
 const Profile = () => {
@@ -43,6 +43,22 @@ const Profile = () => {
 
   );
 };
+const mapDispatchToProps=dispatch=>{
+  return {
+    WIPE:(offset)=>{
+      dispatch({
+        type:'WIPE',
+        value: offset
+      })
+    },
+    SCROLL_END:(offset)=>{
+      dispatch({
+        type:'SCROLL_END',
+        value: offset
+      })
 
+    }
+  }
+}
 
-export default Profile;
+export default connect(null,mapDispatchToProps)(Profile);

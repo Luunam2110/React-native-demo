@@ -5,6 +5,7 @@ import { View, Image, Text, StyleSheet, TouchableOpacity,ScrollView, Animated } 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import{scale} from 'react-native-size-matters'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import connect from "react-redux/lib/connect/connect";
 
 
 
@@ -144,4 +145,10 @@ const styles = StyleSheet.create({
     borderRadius:500,
   },
 })
-export default MyTopBar;
+
+const mapStateToProps= state =>{
+  return ({
+    valueAnimated: state.animatedReducer,
+  })
+}
+export default connect(mapStateToProps,null)(MyTopBar) ;

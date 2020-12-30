@@ -1,11 +1,15 @@
-export  const animatedReducer = (state={offset:0,scrollEnd:0},action)=>{
+let Default={offset:0,scrollEnd:0};
+
+export  const animatedReducer = (state=Default,action)=>{
   switch (action.type){
     case 'SWIPE':{
-      return action.value;
+      Default.offset= action.value;
+      return Default;
     }
     case 'SCROLL_END':{
-      return action.value;
+      Default.scrollEnd= action.type;
+      return Default;
     }
-    default : return 1;
+    default : return Default;
   }
 }
