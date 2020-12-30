@@ -72,7 +72,6 @@ const LoginComponent =(props) => {
               "Tên khác rỗng",
               "Tên đăng nhập không được để trống",
               [
-
                   { text: "OK", onPress: () => console.log("OK Pressed") }
               ],
               { cancelable: false }
@@ -157,7 +156,7 @@ const mapDispatchToProps = dispatch => {
         updateName :(name)=>dispatch({
             type: 'UPDATE_NAME',
             value:name
-        })
+        }),
     }
 }
 

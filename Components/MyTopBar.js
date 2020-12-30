@@ -1,7 +1,7 @@
 
-import React,{useState,useEffect,useRef} from 'react';
+import React,{useState,useEffect} from 'react';
 import style from '../Resource/Style/style';
-import { View, Image, Text, StyleSheet, TouchableOpacity, Animated } from "react-native";
+import { View, Image, Text, StyleSheet, TouchableOpacity,ScrollView, Animated } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import{scale} from 'react-native-size-matters'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -10,8 +10,8 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 
 const MyTopBar =(props)=>{
-  const Up = useRef(new Animated.Value(1)).current;
-  const Down = useRef(new Animated.Value(0)).current;
+  const Up = new Animated.Value(1);
+  const Down =new  Animated.Value(0);
   const swipeUp =()=>{
     Animated.timing(Up, {
       toValue: 0,
@@ -38,10 +38,10 @@ const MyTopBar =(props)=>{
     props.navigation.navigate(name);
   };
 
-
-
   return (
-    <View>
+    <View
+      onScroll={(e)=>{
+        console.log(e.nativeEvent.contentOffset.y);}}>
       <View style={{marginLeft: '50%'}}>
         <View style={styles.Container}></View>
         <View style={styles.Wrapper}></View>

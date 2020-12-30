@@ -16,7 +16,14 @@ import FloydHayes from "../FloydHayes";
 
 const Profile = () => {
   return (
-    <ScrollView style={{flexDirection:'column',marginTop:200}}>
+    <ScrollView
+      onScroll={(e)=>{
+        console.log(e.nativeEvent.contentOffset.y);}}
+      onScrollEndDrag={(e)=>{
+        console.log('ok');
+        console.log(e.nativeEvent.contentOffset.y);
+      }}
+      style={{flexDirection:'column',marginTop:150}}>
       <View >
         <Text style={{fontSize: 30}}> Đây là trang hồ sơ</Text>
         <Text style={{fontSize: 30}}> Đây là trang hồ sơ</Text>
