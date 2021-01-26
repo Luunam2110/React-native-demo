@@ -5,9 +5,9 @@ import {
 } from 'react-native';
 
 
-const Study: () => React$Node = () => {
+const Study = () => {
   return (
-    <View  style={{flexDirection:'column',marginTop:200}}>
+    <View  style={{flexDirection:'column',marginTop:150}}>
       <Text>đây là trang học tập</Text>
       <Text>đây là trang học tập</Text>
       <Text>đây là trang học tập</Text>

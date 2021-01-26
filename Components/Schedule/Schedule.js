@@ -5,9 +5,9 @@ import {
 } from 'react-native';
 
 
-const Schedule: () => React$Node = () => {
+const Schedule= () => {
   return (
-    <View style={{flexDirection:'column',marginTop:200}}>
+    <View style={{flexDirection:'column',marginTop:150}}>
       <Text>đây là trang Lịch biểu</Text>
     </View>
   );

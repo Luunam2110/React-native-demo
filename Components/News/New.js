@@ -14,7 +14,7 @@ import style from "../../Resource/Style/style";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 
-const News = () => {
+const News = (props) => {
   return (
     <ScrollView ContanerStyle={{flex: 1}}>
       <SafeAreaView style={{flex: 1,minHeight:300}}>

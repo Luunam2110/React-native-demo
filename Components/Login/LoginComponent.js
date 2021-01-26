@@ -22,7 +22,8 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import connect from "react-redux/lib/connect/connect";
 
 const LoginComponent =(props) => {
-    console.log(props);
+    console.log(props.name);
+    console.log("a");
     const [Pass, setPass]= useState('');
     const [UserName, setUserName]=useState('');
     const fadeHeight = useRef(new Animated.Value(0)).current;
@@ -53,7 +54,6 @@ const LoginComponent =(props) => {
             useNativeDriver:false
         }).start();
     }
-
     const updateHeight= fadeHeight.interpolate({
         inputRange:[0,1],
         outputRange:[scale(300),scale(180)],

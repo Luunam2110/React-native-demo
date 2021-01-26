@@ -15,7 +15,7 @@ import style from "../../Resource/Style/style";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 
-const Tasks = () => {
+const Tasks = (props) => {
   return (
     <View ContanerStyle={{flex: 1}}>
       <TouchableOpacity

@@ -26,6 +26,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Schedule from "./Components/Schedule/Schedule";
 import Study from "./Components/Study/Study";
 import MyTopBar from "./Components/MyTopBar";
+import store from "./redux/store";
+import Detail from "./Components/Detail Profile/Detail";
 
 
 const TabTop= createMaterialTopTabNavigator();
@@ -67,6 +69,7 @@ const App = (props) => {
                 }}
                 component={Home}/>
               <Stack.Screen name='Notifications' component={Notifications}/>
+              <Stack.Screen name='Detail' component={Detail} />
             </Stack.Navigator>
         }
       </NavigationContainer>
